@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>キッチンカーセレクト沖縄</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+
+<body>
+  <header>
+    <h1>キッチンカーセレクト沖縄</h1>
+    <nav>
+      <button id="show-search">キッチンカー検索</button>
+      <button id="show-register">販売者登録</button>
+    </nav>
+  </header>
+  <main>
+    <section id="search-section">
+      <div class="search-container">
+        <input type="number" id="radius" min="1" max="20" value="1" step="1"> km以内で検索
+        <button id="locate-btn">現在地取得</button>
+        <button id="search-btn">検索</button>
+      </div>
+      <div id="map" style="height: 400px; margin: 20px 0;"></div>
+      <div id="results"></div>
+    </section>
+    <section id="register-section" style="display:none;">
+      <h2>キッチンカー販売者登録</h2>
+      <form id="register-form">
+        <label>キッチンカー名<input type="text" name="name" required></label><br>
+        <label>ジャンル<input type="text" name="genre" required></label><br>
+        <label>出店場所(※市区町村を入力してください)<input type="text" name="location" required></label><br>
+        <label>価格帯<input type="text" name="price" required></label><br>
+        <label>PRコメント(※詳細な場所も記載してください)<textarea name="pr" required></textarea></label><br>
+        <label>商品画像<input type="file" name="image" accept="image/*"></label><br>
+        <label>イベントカレンダー<input type="date" name="event"></label><br>
+        <button type="submit">登録（サブスク:月額1,100円）</button>
+      </form>
+      <div id="register-result"></div>
+    </section>
+  </main>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
